@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: p;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="th.ac.ku.hotelFrontend.controller.PaymentController">
+   <children>
+      <Pane prefHeight="100.0" prefWidth="900.0" style="-fx-background-color: #CC66FF;">
+         <children>
+            <Button fx:id="backBtn" layoutX="728.0" layoutY="19.0" mnemonicParsing="false" onAction="#ActionOnBackBtn" prefHeight="63.0" prefWidth="148.0" style="-fx-background-color: #990033;" text="Back" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Corbel Bold" size="24.0" />
+               </font>
+            </Button>
+            <Label layoutX="14.0" layoutY="8.0" prefHeight="85.0" prefWidth="388.0" text="PAYMENT" textFill="WHITE">
+               <font>
+                  <Font name="Corbel Bold" size="64.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Label layoutX="201.0" layoutY="180.0" prefHeight="28.0" prefWidth="130.0" text="FirstName:">
+         <font>
+            <Font name="Corbel Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="submitBtn" layoutX="376.0" layoutY="535.0" mnemonicParsing="false" onAction="#ActionOnSubmitBtn" prefHeight="63.0" prefWidth="148.0" style="-fx-background-color: #990033;" text="Submit" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Corbel Bold" size="24.0" />
+         </font>
+      </Button>
+      <Label layoutX="201.0" layoutY="287.0" prefHeight="28.0" prefWidth="180.0" text="Phone number:">
+         <font>
+            <Font name="Corbel Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="201.0" layoutY="336.0" prefHeight="28.0" prefWidth="78.0" text="Price:">
+         <font>
+            <Font name="Corbel Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="201.0" layoutY="391.0" prefHeight="28.0" prefWidth="78.0" text="Date:">
+         <font>
+            <Font name="Corbel Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="201.0" layoutY="440.0" prefHeight="28.0" prefWidth="78.0" text="Time:">
+         <font>
+            <Font name="Corbel Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="201.0" layoutY="479.0" prefHeight="28.0" prefWidth="180.0" text="Reference code:">
+         <font>
+            <Font name="Corbel Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="name" layoutX="398.0" layoutY="179.0" prefHeight="31.0" prefWidth="278.0" />
+      <TextField fx:id="phoneNumber" layoutX="399.0" layoutY="286.0" prefHeight="31.0" prefWidth="278.0" />
+      <TextField fx:id="price" layoutX="399.0" layoutY="335.0" prefHeight="31.0" prefWidth="278.0" />
+      <TextField fx:id="hour" layoutX="398.0" layoutY="431.0" prefHeight="31.0" prefWidth="120.0" />
+      <Label layoutX="530.0" layoutY="433.0" prefHeight="28.0" prefWidth="15.0" text=":">
+         <font>
+            <Font name="Corbel Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="minute" layoutX="556.0" layoutY="432.0" prefHeight="31.0" prefWidth="120.0" />
+      <TextField fx:id="refCode" layoutX="399.0" layoutY="476.0" prefHeight="31.0" prefWidth="278.0" />
+      <DatePicker fx:id="date" layoutX="398.0" layoutY="388.0" prefHeight="31.0" prefWidth="278.0" />
+      <Label layoutX="201.0" layoutY="233.0" text="LastName:">
+         <font>
+            <Font name="Corbel Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="last_name" layoutX="398.0" layoutY="235.0" prefHeight="31.0" prefWidth="278.0" />
+   </children>
+</Pane>
