@@ -195,7 +195,7 @@ public class HomeController {
                 HotelPattayaController pattayaController = loader.getController();
                 pattayaController.setHotels(hotels);
                 pattayaController.setDate(checkIn.getValue(),checkOut.getValue());
-                pattayaController.setGuest((int) guest.getValue());
+                pattayaController.setGuest((int)guest.getValue());
             }
         }
     }

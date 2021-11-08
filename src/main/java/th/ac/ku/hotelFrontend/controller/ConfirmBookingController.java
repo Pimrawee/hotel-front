@@ -29,7 +29,7 @@ public class ConfirmBookingController {
     Button backBtn, confirmBookingBtn;
 
     @FXML
-    Label showCheckIn, showCheckOut, showRoomType, showTotalPrice;
+    Label showCheckIn, showCheckOut, showRoomType, showTotalPrice, roomNum;
 
     @FXML
     TextField nameField, surnameField, emailField, phoneField;
@@ -72,6 +72,7 @@ public class ConfirmBookingController {
                 showCheckOut.setText(checkout.format(DateTimeFormatter.ofPattern("dd-MM-yy")));
                 showRoomType.setText(roomtype);
                 showTotalPrice.setText(total_price+" THB");
+                roomNum.setText("Number of rooms  "+room_num);
 
                 ApplicationContext context = new AnnotationConfigApplicationContext(ComponentConfig.class);
                 service = context.getBean(BookingAPIService.class);

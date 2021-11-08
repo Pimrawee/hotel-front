@@ -99,5 +99,10 @@
             <Font name="Cordia New Bold" size="40.0" />
          </font>
       </Label>
+      <Label fx:id="roomNum" layoutX="621.0" layoutY="328.0" prefHeight="28.0" prefWidth="260.0" text="Number of rooms --">
+         <font>
+            <Font name="Corbel Bold" size="24.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
