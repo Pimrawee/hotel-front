@@ -16,8 +16,8 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-@Component
-@FxmlView("/templates/HotelHuaHin.fxml")
+//@Component
+//@FxmlView("/templates/HotelHuaHin.fxml")
 public class HotelHuaHinController {
     @FXML
     Button backBtn, selectHuaHinBtn1, selectHuaHinBtn2, selectHuaHinBtn3;

@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: p;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="th.ac.ku.hotelFrontend.controller.HomeController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" style="-fx-background-color: p;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="th.ac.ku.hotelFrontend.controller.HomeController">
    <children>
       <ChoiceBox fx:id="destination" layoutX="232.0" layoutY="209.0" prefHeight="54.0" prefWidth="436.0" />
       <Label layoutX="232.0" layoutY="173.0" prefHeight="36.0" prefWidth="436.0" text="Destination">
@@ -15,6 +19,16 @@
       <Pane prefHeight="100.0" prefWidth="900.0" style="-fx-background-color: #CC66FF;">
          <children>
             <Button fx:id="checkBookingBtn" layoutX="689.0" layoutY="19.0" mnemonicParsing="false" onAction="#ActionOnCheckBookingBtn" prefHeight="63.0" prefWidth="187.0" style="-fx-background-color: #9932cc;" text="Check Booking" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Corbel Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="paymentBtn" layoutX="526.0" layoutY="19.0" mnemonicParsing="false" onAction="#ActionOnPaymentBtn" prefHeight="63.0" prefWidth="148.0" style="-fx-background-color: #9932cc;" text="Payment" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Corbel Bold" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="adminBtn" layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#ActionAdminBtn" prefHeight="63.0" prefWidth="109.0" style="-fx-background-color: white;" text="Admin" textAlignment="CENTER" textFill="DARKORCHID">
                <font>
                   <Font name="Corbel Bold" size="24.0" />
                </font>

@@ -8,8 +8,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxmlView;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
+import th.ac.ku.hotelFrontend.config.ComponentConfig;
+import th.ac.ku.hotelFrontend.service.Booking;
 import th.ac.ku.hotelFrontend.model.Hotel;
+import th.ac.ku.hotelFrontend.service.BookingAPIService;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -17,8 +22,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Optional;
 
-@Component
-@FxmlView("/templates/ConfirmBooking.fxml")
+//@Component
+//@FxmlView("/templates/ConfirmBooking.fxml")
 public class ConfirmBookingController {
     @FXML
     Button backBtn, confirmBookingBtn;
@@ -36,13 +41,18 @@ public class ConfirmBookingController {
     private String previous_page;
     private int guest;
     private ArrayList<Hotel> hotels;
+    private int room_num;
 
-    public void setter(Hotel hotel,LocalDate checkin,LocalDate checkout,String roomtype,float total_price){
+    private Booking booking;
+    private BookingAPIService service;
+
+    public void setter(Hotel hotel, LocalDate checkin, LocalDate checkout, String roomtype, float total_price, int room_num){
         this.hotel = hotel;
         this.checkin = checkin;
         this.checkout = checkout;
         this.roomtype = roomtype;
         this.total_price = total_price;
+        this.room_num = room_num;
     }
 
     public void setGuest(int guest) {
@@ -62,6 +72,10 @@ public class ConfirmBookingController {
                 showCheckOut.setText(checkout.format(DateTimeFormatter.ofPattern("dd-MM-yy")));
                 showRoomType.setText(roomtype);
                 showTotalPrice.setText(total_price+" THB");
+
+                ApplicationContext context = new AnnotationConfigApplicationContext(ComponentConfig.class);
+                service = context.getBean(BookingAPIService.class);
+
             }
         });
     }
@@ -142,7 +156,20 @@ public class ConfirmBookingController {
 
             Optional<ButtonType> result = alert.showAndWait();
             if(result.get() == ButtonType.OK){
+                booking = new Booking();
+                booking.setFirstName(nameField.getText());
+                booking.setLastName(surnameField.getText());
+                booking.setEmail(emailField.getText());
+                booking.setPhone(phoneField.getText());
+                booking.setHotelName(hotel.getHotelName());
+                booking.setCheckin(checkin);
+                booking.setCheckout(checkout);
+                booking.setRoomType(roomtype);
+                booking.setPrice(total_price);
+                booking.setNumRoom(room_num);
+                booking.setStatus("Pending");
 
+                service.addBooking(booking);
 
 
                 Alert alert2 = new Alert(Alert.AlertType.INFORMATION);
@@ -154,6 +181,8 @@ public class ConfirmBookingController {
                 Stage stage = (Stage) confirmBookingBtn.getScene().getWindow();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/templates/Home.fxml"));
                 stage.setScene(new Scene(loader.load()));
+                HomeController homeController = loader.getController();
+                homeController.setBooking(booking);
             }
         }
     }

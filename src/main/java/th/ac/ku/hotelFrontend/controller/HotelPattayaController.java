@@ -14,8 +14,8 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-@Component
-@FxmlView("/templates/HotelPattaya.fxml")
+//@Component
+//@FxmlView("/templates/HotelPattaya.fxml")
 public class HotelPattayaController {
     @FXML
     Button backBtn, selectPtyBtn1, selectPtyBtn2, selectPtyBtn3;

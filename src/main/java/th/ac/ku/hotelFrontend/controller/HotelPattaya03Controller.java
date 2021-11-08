@@ -15,8 +15,8 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-@Component
-@FxmlView("/templates/HotelPattaya03.fxml")
+//@Component
+//@FxmlView("/templates/HotelPattaya03.fxml")
 public class HotelPattaya03Controller {
     @FXML
     Button backBtn, bookPtyBtn1, bookPtyBtn2;
@@ -29,6 +29,7 @@ public class HotelPattaya03Controller {
     private String roomtype_name1, roomtype_name2;
     private int guestmax1, guestmax2;
     private ArrayList<Hotel> hotels;
+    private int room_num;
 
 
     @FXML
@@ -44,6 +45,14 @@ public class HotelPattaya03Controller {
                 guestmax2 = hotel.getRoomTypes().get(1).getMaxGuest();
             }
         });
+    }
+
+    public void calculateRoom_num1(){
+        room_num = (int) Math.ceil((float) guest/guestmax1);
+    }
+
+    public void calculateRoom_num2(){
+        room_num = (int) Math.ceil((float) guest/guestmax2);
     }
 
     public void calculateTotalPricePerGuest1(){
@@ -114,10 +123,11 @@ public class HotelPattaya03Controller {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/templates/ConfirmBooking.fxml"));
             stage.setScene(new Scene(loader.load()));
 
+            calculateRoom_num1();
             calculateTotalPricePerGuest1();
             calculateTotalPricePerNight1();
             ConfirmBookingController bookingController = loader.getController();
-            bookingController.setter(hotel,checkin,checkout,roomtype_name1,total_price1);
+            bookingController.setter(hotel,checkin,checkout,roomtype_name1,total_price1, room_num);
             bookingController.setPrevious_page(hotel.getRoomTypes().get(0).getId());
             bookingController.setHotels(hotels);
             bookingController.setGuest(guest);
@@ -128,10 +138,11 @@ public class HotelPattaya03Controller {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/templates/ConfirmBooking.fxml"));
             stage.setScene(new Scene(loader.load()));
 
+            calculateRoom_num2();
             calculateTotalPricePerGuest2();
             calculateTotalPricePerNight2();
             ConfirmBookingController bookingController = loader.getController();
-            bookingController.setter(hotel,checkin,checkout,roomtype_name2,total_price2);
+            bookingController.setter(hotel,checkin,checkout,roomtype_name2,total_price2, room_num);
             bookingController.setPrevious_page(hotel.getRoomTypes().get(1).getId());
             bookingController.setHotels(hotels);
             bookingController.setGuest(guest);
