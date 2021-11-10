@@ -7,12 +7,13 @@ Hotel Booking Application เป็นแอปพลิเคชันสำห
 username ของแอดมิน : admin และ password ของแอดมิน : 123
 
 ## การติดตั้งและรัน Hotel Booking Application
-1. git clone https://github.com/Pimlapas774/hotel_front และ https://github.com/Pimlapas774/hotel-back
+1. git clone https://github.com/Pimrawee/hotel-front และ https://github.com/Pimrawee/hotel-back
 2. ทำการสร้าง Database โดยการสร้าง schema ใน mysql workbench
 3. ทำการรันโปรแกรมทั้งหมดที่ได้ git clone ไป
 
-> [hotel_front on GitHub] (https://github.com/Pimlapas774/hotel_front)
-> [hotel-back on GitHub] (https://github.com/Pimlapas774/hotel-back)
+> [hotel-front on GitHub] (https://github.com/Pimrawee/hotel-front)
+
+> [hotel-back on GitHub] (https://github.com/Pimrawee/hotel-back)
 
 # สมาชิกในกลุ่ม
 1. ฐิติรัตน์ เลิศสิริมั่นคง   6110405973
