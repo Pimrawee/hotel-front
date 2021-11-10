@@ -8,7 +8,7 @@ username ของแอดมิน : admin และ password ของแอ�
 
 ## การติดตั้งและรัน Hotel Booking Application
 1. git clone https://github.com/Pimrawee/hotel-front และ https://github.com/Pimrawee/hotel-back
-2. ทำการสร้าง Database โดยการสร้าง schema ใน mysql workbench
+2. ทำการสร้าง Database โดยการสร้าง schema ชื่อ hotel ใน mysql workbench
 3. ทำการรันโปรแกรมทั้งหมดที่ได้ git clone ไป
 
 > [hotel-front on GitHub] (https://github.com/Pimrawee/hotel-front)
